@@ -45,6 +45,19 @@ logs/file_organizer
 
 organized-files/
 
+### **3. Log Parser Script**
+
+Parser a log file and extracts all **ERROR** and **WARNING** message using regex.
+Useful for monitoring, troubleshooting and automated alerting.
+
+**Run:**
+
+python3 scripts/log_parser.py
+
+**Parsed output stored at:**
+
+logs/parsed_errors.log
+
 ---
 
 ## Purpose of This Toolkit
