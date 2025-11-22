@@ -5,7 +5,7 @@ This project demonstrates file handling, directory operations, scripting workflo
 
 ---
 
-##  Project Structure
+## Project Structure
 
 python-automation-toolkit/
 │── scripts/ → All Python automation scripts
@@ -13,43 +13,56 @@ python-automation-toolkit/
 │── logs/ → Log output files
 │── README.md → Documentation
 
-
 ---
 
 ## Included Automation Scripts
 
 ### **1. List Files Script**
+
 Lists all files inside a directory and logs the results with timestamps.
 
 **Run:**
 
 python3 scripts/list_files.py
 
-
 **Logs saved at:**
 
 logs/list_files.log
 
+### **2. File Organizer Scripts**
+
+Organizes files by type (Images, Documents, Archives, Scripts, Others) into structured folders.
+
+**Run:**
+
+python3 scripts/file_organizer.py
+
+**Logs stored at:**
+
+logs/file_organizer
+
+**Organized output:**
+
+organized-files/
 
 ---
 
-##  Purpose of This Toolkit
+## Purpose of This Toolkit
+
 This project helps practice automation concepts used in:
 
-- DevOps  
-- SRE (Site Reliability Engineering)  
-- Production Support  
-- Python scripting  
-- Linux system automation  
+- DevOps
+- SRE (Site Reliability Engineering)
+- Production Support
+- Python scripting
+- Linux system automation
 - Git-based workflow (future enhancements)
 
 ---
 
-##  Technologies Used
+## Technologies Used
 
-- Python 3  
-- Linux (Ubuntu)  
-- Shell scripting  
+- Python 3
+- Linux (Ubuntu)
+- Shell scripting
 - Git / GitHub
-
-
