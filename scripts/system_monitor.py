@@ -5,7 +5,7 @@ CPU_THRESHOLD = 80                    # %
 MEMORY_THRESHOLD = 80                 # %
 DISK_THRESHOLD = 85                   # %
 
-LOG_FILE = "../logs/system_health.log"
+LOG_FILE = "/home/balu/projects/python-automation-toolkit/logs/system_health.log"
 
 def log(message):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

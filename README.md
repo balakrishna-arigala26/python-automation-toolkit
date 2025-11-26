@@ -85,6 +85,21 @@ python3 scripts/system_monitor.py
 logs/system_health.log
 ```
 
+⏱ **Cron Automation (Optional)**
+To run the system monitor automatically every 5 minutes:
+
+```bah
+crontab -e
+```
+
+Add this line:
+
+```bash
+*/5 * * * * /home/<username>/projects/python-automation-toolkit/venv/bin/python /home/<username>/projects/python-automation-toolkit/scripts/system_monitor.py
+
+This enables background monitoring without manual execution,  similar to production server tasks.
+
+
 ---
 
 ## 🎯 Purpose of This Toolkit
