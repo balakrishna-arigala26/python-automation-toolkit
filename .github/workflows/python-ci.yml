@@ -9,7 +9,7 @@ name: Python Automation CI
         - main
 jobs:
   build:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
   steps:
     - name: Checkout repository
       uses: actions/checkout@v3
