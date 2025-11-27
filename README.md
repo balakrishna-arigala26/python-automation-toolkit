@@ -88,14 +88,15 @@ logs/system_health.log
 ⏱ **Cron Automation (Optional)**
 To run the system monitor automatically every 5 minutes:
 
-```bah
+```bash
 crontab -e
 ```
 
 Add this line:
 
 ```bash
-*/5 * * * * /home/<username>/projects/python-automation-toolkit/venv/bin/python /home/<username>/projects/python-automation-toolkit/scripts/system_monitor.py
+*/5 * * * * /home/balu/projects/python-automation-toolkit/venv/bin/python /home/balu/projects/python-automation-toolkit/scripts/system_monitor.py
+```
 
 This enables background monitoring without manual execution,  similar to production server tasks.
 
