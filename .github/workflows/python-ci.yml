@@ -31,6 +31,11 @@ jobs:
           pip install yamllint
           yamllint .github/workflows
 
+      - name: Check Spelling with Codespell
+        run: |
+          pip install codespell
+          codespell --skip="./venv"
+
       - name: Run Syatem Monitor Script
         run: |
           python scripts/system_monitor.py \
