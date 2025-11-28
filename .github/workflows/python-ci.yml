@@ -41,7 +41,7 @@ jobs:
           npm install -g cspell
           cspell "**" --no-progress --no-summary || true
 
-      - name: Run Syatem Monitor Script
+      - name: Run System Monitor Script
         run: |
           python scripts/system_monitor.py \
-          || echo "Syatem monitor executed successfully"
+          || echo "System monitor executed successfully"
