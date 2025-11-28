@@ -1,4 +1,5 @@
 # Python Automation Toolkit
+[![CI Status](https://github.com/balakrishna-arigala26/python-automation-toolkit/actions/workflows/python-ci.yml/badge.svg)](https://github.com/balakrishna-arigala26/python-automation-toolkit/actions/workflows/python-ci.yml)
 
 A collection of DevOps-style Python automation scripts for learning and practicing real-world automation tasks.  
 This project demonstrates file handling, directory operations, logging, and Linux-friendly scripting workflows — skills commonly used by DevOps, SRE, and Production Support Engineers.
