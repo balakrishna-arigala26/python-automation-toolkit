@@ -36,6 +36,11 @@ jobs:
           pip install codespell
           codespell --skip="./venv"
 
+      - name: Check spelling with cspell
+        run: |
+          npm install -g cspell
+          cspell "**" --no-progress --no-summary || true
+
       - name: Run Syatem Monitor Script
         run: |
           python scripts/system_monitor.py \
