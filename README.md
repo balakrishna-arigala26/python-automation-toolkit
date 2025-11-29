@@ -155,6 +155,32 @@ python3 scripts/system_monitor.py
 
 ---
 
+
+## 📸 Screenshots
+
+### 🔹 Project Folder Structure
+Displays the complete directory layout of the Python Automation Toolkit.
+
+![Project Tree](screenshots/project_tree.png)
+
+### 🔹 CI Pipeline Status
+GitHub Actions CI pipeline passing successfully after automated validation and script execution.
+
+![CI Status](screenshots/ci_status.png)
+
+### 🔹 System Monitor Output
+Shows real system resources metrics logged by the automated CPU/Memory/Disk monitoring script.
+
+![System Monitor Output](screenshots/system_monitor_output.png)
+
+### 🔹 File Organizer Output
+Demonstrates files neatly categorized by type into Images/Documents/Scripts using the automation script.
+
+![File Organizer Result](screenshots/file_organizer_output.png)
+
+---
+
+
 ## 📌 License
 
 This project is for personal learning and practice.
