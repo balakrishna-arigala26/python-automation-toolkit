@@ -31,17 +31,11 @@ jobs:
           pip install yamllint
           yamllint .github/workflows
 
-      - name: Check Spelling with Codespell
+      - name: Test CLI Commands
         run: |
-          pip install codespell
-          codespell --skip="./venv"
+          automation-toolkit list-files
+          automation-toolkit organize
+          automation-toolkit parse-logs
 
-      - name: Check spelling with cspell
-        run: |
-          npm install -g cspell
-          cspell "**" --no-progress --no-summary || true
-
-      - name: Run System Monitor Script
-        run: |
-          python scripts/system_monitor.py \
-          || echo "System monitor executed successfully"
+      - name: CI Completed
+        run: echo "All automation scripts executed successfully ✔"

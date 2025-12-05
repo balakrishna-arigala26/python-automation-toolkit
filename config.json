@@ -1,0 +1,9 @@
+{
+  "LIST_FILES_PATH": ".",
+  "ORGANIZE_FOLDER": "organized-files",
+  "LOG_PARSE_FILE": "logs/sample.log",
+  "MONITOR_INTERVAL": 10,
+  "SYSTEM_MONITOR_LOG": "logs/system_health.log",
+  "CPU_ALERT_THRESHOLD": 85,
+  "MEM_ALERT_THRESHOLD": 85
+}
