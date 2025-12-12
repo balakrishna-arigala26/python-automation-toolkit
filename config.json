@@ -1,6 +1,6 @@
 {
   "LIST_FILES_PATH": ".",
   "ORGANIZE_FOLDER": "organized-files",
-  "LOG_PARSE_FILE": "loga/smaple.log",
+  "LOG_PARSE_FILE": "logs/sample.log",
   "MONITOR_INTERVAL": 10
 }
