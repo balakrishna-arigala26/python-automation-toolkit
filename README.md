@@ -45,6 +45,7 @@ python-automation-toolkit/
 ├── requirements.txt
 ├── requirements-dev.txt
 └── README.md 
+```
 
 ## 🚀 Getting Started (Local)
 
