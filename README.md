@@ -1,137 +1,132 @@
-🐍 Python Automation Toolkit — DevOps Focus
+# Python Automation Toolkit
 
-A production-style Python automation toolkit packaged into a single CLI command — designed for DevOps, SRE, and Production Support workflows.
-It automates real engineering tasks such as log parsing, file organization, system monitoring, and directory inspection — with logging, observability, and CI pipeline validation.
+![CI](https://github.com/balakrishna-arigala26/python-automation-toolkit/actions/workflows/ci.yml/badge.svg)
 
-📌 Table of Contents
+A production-ready **Python automation toolkit** demonstrating real-world DevOps practices:
+- clean modular code
+- strict linting & formatting
+- enforced test coverage
+- GitHub Actions CI
 
-Features
+This repository follows the same quality gates used in **real production Python / DevOps teams** and is designed as a **portfolio-grade DevOps / Automation Engineer project**.
 
-Installation
+---
 
-CLI Usage Examples
+## ✨ Features
 
-Project Structure
+- 📁 File organization utilities
+- 📄 File listing with filtering
+- 📜 Log parsing helpers
+- 🖥️ System monitoring utilities
+- 🧪 High test coverage (≥ 90%)
+- 🧹 Code quality enforced via CI
 
-Screenshots
+---
 
-Skills Demonstrated
+## 📂 Project Structure
 
-Roadmap
-
-License
-
-🚀 Features
-CLI Command Automation Performed
-automation-toolkit list-files Lists files & logs output with timestamps
-automation-toolkit organize Organizes files into categorized folders
-automation-toolkit parse-logs Extracts ERROR & WARNING from logs
-automation-toolkit monitor Tracks CPU / Memory / Disk usage with alert logs
-
-Each task logs structured output similar to real DevOps/SRE operational tools.
-
-⚙️ Installation & Setup
-1️⃣ Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-2️⃣ Install the toolkit in editable mode
-pip install -e .
-
-3️⃣ Run the automation using CLI
-automation-toolkit list-files
-automation-toolkit organize
-automation-toolkit parse-logs
-automation-toolkit monitor
-
-🧪 CLI Usage Examples
-✔ List files
-automation-toolkit list-files
-
-Output example:
-
-Listing files in: .
-
-- README.md
-- scripts
-- logs
-
-✔ Organize files
-automation-toolkit organize
-
-Automatically categorizes into:
-
-organized-files/
-│── Documents/
-│── Images/
-│── Others/
-
-✔ Parse logs
-automation-toolkit parse-logs
-
-Extracts all ERROR and WARNING lines → saved to:
-
-logs/parsed_errors.log
-
-✔ System monitor
-automation-toolkit monitor
-
-Logs CPU / Memory / Disk every interval (defined in config.json).
-
-📁 Project Structure
+```text
 python-automation-toolkit/
-│── automation_toolkit/ → CLI entry module (automation-toolkit command)
-│── scripts/ → Automation logic (list, organize, parse, monitor)
-│── config.json → Central config for CLI
-│── logs/ → Log outputs
-│── organized-files/ → File organizer output
-│── screenshots/ → Documentation screenshots
-│── setup.py → Packaging configuration
-│── requirements.txt
-│── README.md
+├── automation_toolkit/
+│   ├── cli.py
+│   ├── file_organizer.py
+│   ├── list_files.py
+│   ├── log_parser.py
+│   └── system_monitor.py
+├── tests/
+│   ├── test_file_organizer.py
+│   ├── test_list_files.py
+│   ├── test_log_parser.py
+│   └── test_system_monitor.py
+├── .github/workflows/ci.yml
+├── pyproject.toml
+├── tox.ini
+├── Dockerfile
+├── requirements.txt
+├── requirements-dev.txt
+└── README.md 
 
-📸 Screenshots
-🔹 Project Folder Structure
+## 🚀 Getting Started (Local)
 
-🔹 CI Pipeline Status
+1️⃣ Clone repository
 
-🔹 System Monitor Output
+```bash
+git clone https://github.com/balakrishna-arigala26/python-automation-toolkit.git
+```
 
-🔹 File Organizer Output
+```bash
+cd python-automation-toolkit
+```
 
-🧠 Skills Demonstrated
+2️⃣ Create virtual environment and activate
 
-Python scripting for DevOps automation
+```bash
+python3 -m venv .venv
+```
 
-Directory and file operations
+```bash
+source .venv/bin/activate
+```
 
-Log parsing using regex
+3️⃣ Install dependencies
 
-System monitoring with thresholds
+```bash
+pip install --upgrade pip
+```
 
-Writing reusable CLI tools using entry points
+```bash
+pip install -r requirements-dev.txt
+```
 
-Logging and timestamping (observability)
+## 🧪 Run Quality Checks Locally
 
-GitHub Actions CI pipeline
+Format & lint
 
-Git & GitHub workflow
+```bash
+isort .
+```
 
-Virtual environments and editable installs
+```bash
+black .
+```
 
-🛣 Roadmap (Upcoming Enhancements)
+```bash
+flake8 .
+```
 
-Publish toolkit to PyPI
+Run tests with coverage
 
-Add email/SMS alerts for system monitoring
+```bash
+pytest
+```
 
-Add Docker support
+Expected:
+  -  ✅ All tests pass
 
-Create installer script
+  -  ✅ Coverage ≥ 90%
 
-Add unit tests + coverage badges
 
-📌 License
+## 🧪 Run via tox (CI simulation)
 
-This project is for personal learning and practice.
+```bash
+tox
+```
 
+## 🤖 Continuous Integration
+
+GitHub Actions runs on every push and pull request:
+
+    - `isort --check-only .`
+    - `black --check .`
+    - `flake8 .`
+    - `pytest` (with coverage gate)
+
+CI fails if:
+
+    - formatting is incorrect
+    - linting fails
+    - coverage < 90%
+
+📜 License
+
+MIT License

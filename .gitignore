@@ -18,3 +18,10 @@ organized-files/
 
 
 
+venv/
+
+.coverage
+.tox/
+.venv/
+flake8.log
+PROJECT_GUIDE.md

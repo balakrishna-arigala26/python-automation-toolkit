@@ -1,19 +1,16 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
-    name="python-automation-toolkit-balu",
-    version="1.0.0",
-    description="A learning-oriented DeOps-style Python automation toolkit",
-    packages=find_packages(exclude=["venv", "screenshots"]),
-    include_package_data=True,
-    install_requires=[
-        "psutils",
+    name="automation-toolkit",
+    version="0.1.0",
+    description="DevOps-focused Python automation toolkit",
+    packages=find_packages(),
+    install_reuires=[
+        "click>=8.0",
     ],
-    entry_points={
+    entry_point={
         "console_scripts": [
-            "automation-toolkit=automation_toolkit.cli:main",
+            "automation-toolkit=automation_toolkit.cli:cli",
         ],
     },
 )
-
-
