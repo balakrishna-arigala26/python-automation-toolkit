@@ -1,12 +1,31 @@
-FROM python:3.12-slim
+# ----------------------- STAGE 1: build --------------------
+FROM python:3.11-slim AS builder
+
+WORKDIR /app  
+
+# Install build tools (only here)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+&& rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+# ----------------------- STAGE 2: runtime ---------------------
+FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements-dev.txt .
-RUN pip install --no-cache-dir -r requirements-dev.txt
+# create a non-root user (VERY IMPORTANT)
+RUN groupadd -r appuser && useradd -r -g appuser appuser
 
-COPY automation_toolkit automation_toolkit
-COPY tests tests
-COPY pyproject.toml .
+# copy only installed packages + app code
+COPY --from=builder /usr/local/lib/python3.11/site-packages \
+                    /usr/local/lib/python3.11/site-packages
+COPY automation_toolkit ./automation_toolkit
+COPY setup.py .
 
-CMD ["pytest"]
+USER appuser
+
+ENTRYPOINT ["python", "-m", "automation_toolkit.cli"]
