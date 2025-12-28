@@ -1,25 +1,25 @@
 # Python Automation Toolkit
 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![CI](https://github.com/balakrishna-arigala26/python-automation-toolkit/actions/workflows/ci.yml/badge.svg)
 
-A production-ready **Python automation toolkit** demonstrating real-world DevOps practices:
-- clean modular code
-- strict linting & formatting
-- enforced test coverage
-- GitHub Actions CI
 
-This repository follows the same quality gates used in **real production Python / DevOps teams** and is designed as a **portfolio-grade DevOps / Automation Engineer project**.
+A **production-ready Python automation toolkit** demonstrating real-world DevOps practices such as containerization, CI pipelines, and clean project structure.
+
+This project is built to reflect how automation tools are developed, tested, and shipped in real engineering teams.
 
 ---
 
-## ✨ Features
+## 🚀 Features
 
-- 📁 File organization utilities
-- 📄 File listing with filtering
-- 📜 Log parsing helpers
-- 🖥️ System monitoring utilities
-- 🧪 High test coverage (≥ 90%)
-- 🧹 Code quality enforced via CI
+- Modular Python automation utilities
+- Clean CLI interface
+- Dockerized using multi-stage builds
+- Non-root container execution
+- GitHub Actions CI pipeline
+- Linting, formatting & test enforcement
+- Production-style project structure
 
 ---
 
@@ -47,19 +47,22 @@ python-automation-toolkit/
 └── README.md 
 ```
 
-## 🚀 Getting Started (Local)
+## 🐳 Run with Docker
 
-1️⃣ Clone repository
-
-```bash
-git clone https://github.com/balakrishna-arigala26/python-automation-toolkit.git
-```
+**Build image** 
 
 ```bash
-cd python-automation-toolkit
+docker build -t automation-toolkit . 
+```
+**Run CLI**
+
+```bash
+docker run --rm automation-toolkit --help
 ```
 
-2️⃣ Create virtual environment and activate
+## 🧪 Local Development
+
+**Setup virtual environment**
 
 ```bash
 python3 -m venv .venv
@@ -69,7 +72,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-3️⃣ Install dependencies
+**Install dependencies**
 
 ```bash
 pip install --upgrade pip
@@ -79,9 +82,9 @@ pip install --upgrade pip
 pip install -r requirements-dev.txt
 ```
 
-## 🧪 Run Quality Checks Locally
+## 🧹 Code Quality Checks
 
-Format & lint
+**Format & lint**
 
 ```bash
 isort .
@@ -95,16 +98,13 @@ black .
 flake8 .
 ```
 
-Run tests with coverage
+**Run tests with coverage**
 
 ```bash
 pytest
 ```
 
-Expected:
-  -  ✅ All tests pass
-
-  -  ✅ Coverage ≥ 90%
+All checks must pass before merging.
 
 
 ## 🧪 Run via tox (CI simulation)
@@ -113,21 +113,30 @@ Expected:
 tox
 ```
 
-## 🤖 Continuous Integration
+## 🤖 CI Pipeline
 
-GitHub Actions runs on every push and pull request:
+GitHub Actions runs on 
 
-    - `isort --check-only .`
-    - `black --check .`
-    - `flake8 .`
-    - `pytest` (with coverage gate)
+- Push to `main`
+- Pull requests targetting `main`
 
-CI fails if:
+Pipeline steps:
 
-    - formatting is incorrect
-    - linting fails
-    - coverage < 90%
+- Docker image buuild
+- Linting & formatting checks
+- Test execution
 
-📜 License
+This ensures consistent, production-ready quality.
 
-MIT License
+## 🗺️ Roadmap
+
+- Push Docker image to AWS ECR
+- Deploy container to EC2
+- Add monitoring & logs
+- Improve CLI UX
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+→ See [LICENSE](LICENSE)
