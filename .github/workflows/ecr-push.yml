@@ -35,9 +35,11 @@ jobs:
         run: |
           REGISTRY="${{ steps.login-ecr.outputs.registry }}"
           REPO="${{ env.ECR_REPOSITORY }}"
-          TAG="latest"
+          SHORT_SHA="${GITHUB_SHA::7}"
 
-          IMAGE="${REGISTRY}/${REPO}:${TAG}"
+          docker build -t "${REPO}:latest" .
+          docker tag "${REPO}:latest" "${REGISTRY}/${REPO}:latest"
+          docker tag "${REPO}:latest" "${REGISTRY}/${REPO}:${SHORT_SHA}"
 
-          docker build -t "${IMAGE}" .
-          docker push "${IMAGE}"
+          docker push "${REGISTRY}/${REPO}:latest"
+          docker push "${REGISTRY}/${REPO}:${SHORT_SHA}"
