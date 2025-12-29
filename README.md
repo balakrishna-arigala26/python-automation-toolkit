@@ -140,3 +140,4 @@ This ensures consistent, production-ready quality.
 This project is licensed under the MIT License.
 
 → See [LICENSE](LICENSE)
+CI/CD enabled
