@@ -1,45 +1,39 @@
 name: Build and Push Docker Image to ECR
-
-on:
+'on':
   push:
     branches:
       - main
-      
 env:
   AWS_REGION: ap-south-1
   ECR_REPOSITORY: python-automation-toolkit
-  
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    
     permissions:
-      id-token: write   # required for OIDC
+      id-token: write
       contents: read
-      
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ env.AWS_REGION }}
-          
+          role-to-assume: '${{ secrets.AWS_ROLE_ARN }}'
+          aws-region: '${{ env.AWS_REGION }}'
       - name: Login to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
-
       - name: Build Docker image
         run: |
           docker build -t $ECR_REPOSITORY .
-          
       - name: Tag Docker image
-        run: |
+        run: >
           docker tag $ECR_REPOSITORY:latest \
-          ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazon.com/$ECR_REPOSITORY:latest
 
+          ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION
+          }}.amazon.com/$ECR_REPOSITORY:latest
       - name: Push image to ECR
-        run: |
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION}}.amazonaws.com/$ECR_REPOSITORY:latest
-    
+        run: >
+          docker push \
+
+          ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{
+          env.AWS_REGION}}.amazonaws.com/$ECR_REPOSITORY:latest
